@@ -44,7 +44,7 @@ const Admin = () => {
 
     return (
         <>
-            <span style={{margin: '20px'}}>Copy this link <a href="http://localhost:3000/overlay">http://localhost:3000/overlay</a> to the source browser of your streaming software</span>
+            <span style={{margin: '20px'}}>Copy this link <a href="/overlay">{window.location.href}/overlay</a> to the source browser of your streaming software</span>
             {alerts.map(alert => (
                 <AlertItem key={alert.id} message={alert} onShow={() => handleShowAlert(alert.id)} onHide={() => handleHideAlert(alert.id)} />
             ))}
