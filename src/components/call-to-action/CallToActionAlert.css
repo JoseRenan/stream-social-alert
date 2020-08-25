@@ -1,0 +1,76 @@
+.cta_image {
+    border-radius: 15px;
+    height: 100px;
+    border: 5px solid #8C9EFF;
+}
+
+.cta_hideable-opacity {
+    opacity: 0;
+    transition: opacity .5s ease-in-out .5s;
+}
+
+.cta_appear-opacity {
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+}
+
+.cta_username {
+    font-weight: bold;
+    color: white;
+    background-color: #8C9EFF;
+    padding-left: 15px;
+    padding-right: 10px;
+    border-top-right-radius: 15px;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width:80%;
+}
+
+.cta_message {
+    width: 90%;
+    background-color: white;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-right: 10px;
+    min-height: 40px;
+    height: 60px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.cta_hideable-width {
+    width: 0px;
+    padding: 0;
+    transition: width .5s ease-in-out, padding .5s ease-in-out;
+}
+
+.cta_appear-width {
+    transition: width .5s ease-in-out .5s, padding .5s ease-in-out .2s;
+}
+
+.cta_social-logo {
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+}
+
+.cta_content-bars {
+    width: 100%;
+    display: flex;
+    margin-left:-2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cta_hideable-font {
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.cta_appear-font {
+    opacity: 1;
+    transition: opacity .3s ease-in-out .7s;
+}
