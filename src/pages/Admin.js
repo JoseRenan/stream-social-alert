@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import io from "socket.io-client";
 import { useFetch } from '../hooks';
 import CallToActionAlert from '../components/call-to-action/CallToActionAlert';
+import { API_URL } from '../util';
 
 const AlertItem = ({ message, onShow, onHide }) => (
     // message: message.cleanContent,
@@ -19,14 +20,14 @@ const AlertItem = ({ message, onShow, onHide }) => (
 
 const Admin = () => {
     const [alerts, setAlerts] = useState([])
-    const { data: result } = useFetch('http://localhost:5000/alerts')
+    const { data: result } = useFetch('/alerts')
 
     useEffect(() => {
         if (result.data) setAlerts(result.data)
     }, [result])
 
     useEffect(() => {
-        const socket = io('http://localhost:5000/')
+        const socket = io(API_URL)
         socket.on('newAlert', alert => {
             setAlerts(prev => [...prev, alert])
         })
@@ -34,11 +35,11 @@ const Admin = () => {
     }, [])
 
     const handleShowAlert = (id) => {
-        fetch(`http://localhost:5000/alerts/show/${id}`)
+        fetch(`${API_URL}/alerts/show/${id}`)
     }
 
     const handleHideAlert = (id) => {
-        fetch(`http://localhost:5000/alerts/hide/${id}`)
+        fetch(`${API_URL}/alerts/hide/${id}`)
     }
 
     return (
